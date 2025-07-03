@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fasanya Favour Oluwaseun</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfdfd;
+            color: #1c1c1c;
+        }
+
+        body.dark-mode {
+            background-color: #0A0A0A;
+            color: #ffffff;
+        }
+
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background-color: #fdfdfd;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            /* box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05); */
+        }
+
+        header {
+            background-color: #fdfdfd;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        nav a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #33333357;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+
+
+        .btn.header-btn {
+            width: 140px;
+            background-color: #0A0A0A;
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn.header-btn:hover {
+            background-color: transparent;
+            color: #0A0A0A;
+            border: 2px solid #0A0A0A;
+        }
+
+        .btn.header-btn:active {
+            transform: scale(0.96);
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem 2rem;
+            gap: 2rem;
+        }
+
+        .hero-left {
+            flex: 1 1 50%;
+        }
+
+        .hero-left h1 {
+            font-size: 5rem;
+            line-height: 1.1;
+        }
+
+        .tools {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 1.5rem 1.5rem;
+        }
+
+        .use {
+            margin: 1.5rem 3.5rem;
+            font-weight: 500;
+            color: #000000b4;
+        }
+
+        .tools img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .Pd {
+            height: 150px;
+            font-weight: 900;
+            color: #E5E3DF;
+            line-height: 4.4;
+        }
+
+        .Pd>h1 {
+            font-size: 152px;
+            font-family: "Dosis", sans-serif;
+        }
+
+        .hero-right {
+            flex: 1 1 40%;
+            text-align: center;
+            margin-top: -19rem;
+        }
+
+        .hero-right img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 12px;
+            margin-left: -5rem;
+        }
+
+        .hero-right2 {
+            width: 39%;
+            flex: 1 1 40%;
+            text-align: right;
+            margin-left: 48rem;
+            ;
+            margin-top: -12rem;
+            font-size: 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 8rem;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 4rem;
+        }
+
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6rem;
+            /* flex-wrap: wrap; */
+
+        }
+
+        .about1 {
+            width: 50%;
+            line-height: 2rem;
+            text-wrap: wrap;
+        }
+
+        .about2 {
+            width: 50%;
+        }
+
+        .about img {
+            /* width: 150px; */
+            height: 400px;
+            border-radius: 50%;
+        }
+
+        .featured {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
+            gap: 1rem;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #E7E7E7;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-body {
+            border: 1px solid red;
+            width: 90%;
+            height: 80px;
+        }
+
+        .card img {
+            width: 100%;
+
+        }
+
+        .featured .card img {
+            width: 100%;
+            transition: transform 0.4s ease;
+            transform: scale(1.05);
+        }
+
+        .featured .card:hover img {
+            transform: scale(1);
+        }
+
+        .card-body {
+            padding: 1rem;
+        }
+
+        .testimonial-carousel {
+            max-width: 500px;
+            height: 320px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            background: #ffffff;
+            padding: 2rem;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .testimonial-dots .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .testimonial-dots .dot.active {
+            background-color: #E7E7E7;
+        }
+
+
+
+
+        .contact-form {
+            max-width: 800px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        label {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #929190;
+        }
+
+        .btnn {
+            width: 30%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            font-size: medium;
+            border-radius: 8px;
+            padding: 0.75rem;
+            border: none;
+            background: #0A0A0A;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: inherit;
+            background-color: #E7E7E7;
+            color: #929190;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            background: #f5f5f5;
+
+        }
+
+        .project-card {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-bottom: 2rem;
+        }
+
+        .mockup-wrapper {
+            background: url('Media/dark-stone-bg.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+
+            /* For image zoom effect */
+            transition: transform 0.4s ease;
+        }
+
+        .mockup-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            transition: transform 0.4s ease;
+            /* Smooth zoom */
+        }
+
+        .mockup-wrapper:hover .mockup-img {
+            transform: scale(1.05);
+            /* Zoom-out on hover */
+        }
+
+        .project-caption {
+            width: 98%;
+            margin-top: -10px;
+            background: #F5F5F5;
+            padding: 1rem 1.2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .caption-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0A0A0A;
+            margin: 0;
+        }
+
+        .case-study {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #888;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .view-cv-link {
+            text-align: right;
+            margin-top: -1rem;
+            margin-bottom: 3rem;
+            padding-right: 1rem;
+        }
+
+        .view-cv-link a {
+            font-size: 0.95rem;
+            color: #0A0A0A;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .view-cv-link a:hover {
+            color: #313030;
+        }
+
+
+
+
+        /* Mobile reponsiveness: <= 900px */
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            nav {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            nav a {
+                margin-left: 0;
+            }
+
+            .hero {
+                flex-direction: column;
+                padding: 2rem 1rem;
+            }
+            .btn.header-btn{
+                width: 100%;
+            }
+            .hero-left h1 {
+                font-size: 4rem;
+                text-align: center;
+
+            }
+
+            .Pd h1 {
+                font-size: 5rem;
+                line-height: 1.2;
+                margin-top: 4rem;
+            }
+
+            .tools {
+                justify-content:center;
+            }
+            .hero-left p{
+                text-align: center;
+            }
+
+            .hero-right,
+            .hero-right2 {
+                margin: 0 auto;
+                text-align: center;
+            }
+
+
+            .hero-right img {
+                margin-left: 0;
+                margin-top: -7rem;
+            }
+            .hero-right2 {
+                margin-top: 2rem;
+                margin-left: 0;
+                font-size: 1rem;
+                width: 100%;
+            }
+
+            .about {
+                flex-direction: column;
+                padding: 0 1rem;
+            }
+
+            .about1,
+            .about2 {
+                width: 100%;
+                text-align: center;
+            }
+
+            .about2 img {
+                height: auto;
+                width: 80%;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .section h2 {
+                font-size: 2.5rem;
+            }
+
+            .project-caption {
+                padding: 1rem;
+            }
+
+            .btnn {
+                width: 100%;
+            }
+        }
+
+        /* Tablet: 901px - 1000px */
+        @media  (max-width: 1024px) {
+            .hero {
+                flex-direction: column;
+                padding: 3rem 2rem;
+            }
+
+            .hero-right {
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .hero-right2 {
+                margin-top: 2rem;
+                margin-left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .about1,
+            .about2 {
+                width: 100%;
+                text-align: center;
+            }
+
+            .about2 img {
+                height: auto;
+                width: 60%;
+            }
+
+            .tools {
+                justify-content: center;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #0A0A0A;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: block;
+                font-size: 2rem;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+                padding: 1rem 0;
+                display: none;
+                background-color: #fff;
+            }
+
+            .nav-links a {
+                text-decoration: none;
+                color: #0A0A0A;
+
+                width: 100%;
+                padding: 0.5rem 1rem;
+                text-align: left;
+
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .header-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .header-top {
+                padding: 1rem 2rem;
+            }
+
+            header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo" id="logo-toggle">
+                <img src="Media/Frame 2147224050.png" alt="logo">
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+        </div>
+
+        <div class="nav-links" id="nav-links">
+            <a href="#">Home</a>
+            <a href="#" >About</a>
+            <a href="#">Works</a>
+            <a href="#contact" class="btn header-btn">Get In Touch</a>
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Fasanya Favour <br>Oluwaseun</h1>
+            <div class="tools">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
+                    alt="Photoshop">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Wordpress_Blue_logo.png" alt="WordPress">
+            </div>
+            <p class="use">Tools I use</p>
+
+            <div class="Pd">
+                <h1>PRODUCT DESIGNER</h1>
+            </div>
+
+            <div class="hero-right">
+                <img src="/Media/ChatGPT Image Jun 26, 2025, 11_44_36 AM 1 (1).png" alt="Hero">
+            </div>
+            <div class="hero-right2">
+                <p>I’m a product designer focused on creating intuitive, user-centered digital products. From discovery
+                    to delivery, I turn ideas into seamless experiences that solve real problems with clarity, empathy,
+                    and purpose.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section" id="about">
+        <h2>About Me</h2>
+
+        <div class="about">
+
+            <div class="about1">
+                <p><strong>Hi, I’m Fasanya Favour Oluwaseun</strong> — a product designer with a passion for crafting
+                    digital experiences that are as intuitive as they are impactful. My design journey began with a
+                    curiosity about how technology could improve everyday life, and it has grown into a mission to
+                    create user-friendly solutions that truly make a difference.
+                    I believe great design balances empathy, clarity, and purpose. Whether I’m wireframing a new
+                    interface or refining micro-interactions, I always keep the user at the center of the process.
+                    Outside of design, I enjoy experimenting with creative tools, sketching ideas, and getting lost in a
+                    good book. I’m a lifelong learner who thrives in collaborative environments where ideas flow and
+                    innovation grows.</p>
+            </div>
+            <div class="about2">
+                <img src="/Media/Ellipse 397.png" alt="About">
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="works">
+        <h2>Featured Works</h2>
+        <div class="featured">
+            <div class="project-card">
+                <div class="mockup-wrapper">
+                    <a href="thesis.html" target="_blank">
+                        <img src="Media/MacBook Air 15-inch mockup on a gray rock surface (Mockuuups Studio).png"
+                            alt="Electricity Project Screenshot" class="mockup-img">
+                    </a>
+
+                </div>
+
+                <div class="project-caption">
+                    <div class="caption-top">
+                        <h3 class="project-title">Thesis Archive</h3>
+                        <span class="case-study">Case Study</span>
+                    </div>
+                    <p class="project-description">
+                        A clean, searchable platform for students to access and upload academic theses with ease.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="mockup-wrapper">
+                    <a href="electricity.html" target="_blank">
+                        <img src="Media/MacBook Air mockup on a rugged rock surface (Mockuuups Studio).png"
+                            alt="Electricity Project Screenshot" class="mockup-img">
+                    </a>
+
+                </div>
+
+                <div class="project-caption">
+                    <div class="caption-top">
+                        <h3 class="project-title">Electricity</h3>
+                        <span class="case-study">Case Study</span>
+                    </div>
+                    <p class="project-description">
+                        A simple, user-friendly website platform for paying electricity bills online.
+                    </p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="mockup-wrapper">
+                    <a href="Quickserve.html" target="_blank">
+                        <img src="Media/MacBook Pro 14_ - 1 (4).png" alt="Electricity Project Screenshot"
+                            class="mockup-img">
+                    </a>
+
+                </div>
+
+                <div class="project-caption">
+                    <div class="caption-top">
+                        <h3 class="project-title">Quickserve</h3>
+                        <span class="case-study">Case Study</span>
+                    </div>
+                    <p class="project-description">
+                        A sleek restaurant reservation app that makes booking tables fast, easy, and hassle-free.
+                    </p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="mockup-wrapper">
+                    <a href="Realmerch.html" target="_blank">
+                        <img src="Media/MacBook Air mockup with isometric floating angle (Mockuuups Studio).png"
+                            alt="Electricity Project Screenshot" class="mockup-img">
+                    </a>
+                </div>
+
+                <div class="project-caption">
+                    <div class="caption-top">
+                        <h3 class="project-title">Real Merch</h3>
+                        <span class="case-study">Case Study</span>
+                    </div>
+                    <p class="project-description">
+                        An e-commerce website designed to showcase and sell branded merchandise with a clean, modern
+                        interface.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="view-cv-link">
+            <a href="Media/Fasanya-Favour-Oluwaseun-CV-Imp.pdf" target="_blank">View My CV...</a>
+        </div>
+
+    </section>
+
+    <section class="section">
+        <h2>What Clients Say</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial-track">
+                <div class="testimonial-slide">
+                    <p>“Favour's design insights were invaluable. She transformed our vague ideas into a product that
+                        our users love. Her attention to detail and user-centric approach are exceptional.”</p> <br>
+                    <img src="Media/Ellipse 398.png" alt=""> <br> <br>
+                    <strong>– Jane Doe, CEO of TechSolutions</strong>
+                </div>
+                <div class="testimonial-slide">
+                    <p>“She understood our vision quickly and turned it into a clean, usable interface.”</p><br>
+                    <img src="Media/Ellipse 398.png" alt=""> <br> <br>
+                    <strong>– John Smith, Founder of InnovateHub</strong>
+                </div>
+                <div class="testimonial-slide">
+                    <p>“Working with Favour was a pleasure. She is not only a talented designer but also a great
+                        communicator. The final product exceeded our expectations in every way”</p> <br>
+                    <img src="Media/Ellipse 399.png" alt=""> <br> <br>
+                    <strong>– John Smith, Founder of InnovateHub</strong>
+                </div>
+                <div class="testimonial-slide">
+                    <p>“Favour is the kind of designer every team needs. She always delivers.”</p> <br>
+                    <img src="Media/Ellipse 399 (1).png" alt=""> <br> <br>
+                    <strong>– David Afolabi, PayLite Africa</strong>
+                </div>
+                <div class="testimonial-slide">
+                    <p>“Working with Favour was a breath of fresh air. She understood our product vision quickly and
+                        turned it into a clean, usable interface. Her process is seamless and collaborative.”</p> <br>
+                    <img src="Media/Ellipse 398.png" alt=""> <br> <br>
+                    <strong>– David Afolabi, PayLite Africa</strong>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+
+    </section>
+
+
+    <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p style="text-align:center; font-size: 1rem; font-weight: 500;">Have A Project In Mind Or Just Want To Say Hi?
+            Feel Free To Reach Out!</p> <br>
+        <form class="contact-form">
+
+            <div class="form-group">
+                <label for="fullname">Fullname*</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address*</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message*</label>
+                <textarea id="message" name="message" rows="5" placeholder="Enter a message" required></textarea>
+            </div>
+
+        </form>
+        <button class="btnn" type="submit">Submit</button>
+    </section>
+
+    <footer>
+        <h2 style="margin-bottom: 0.5rem; ">Connect With Me On Social Media</h2>
+        <p>Email:📧 favourseun@gmail.com | Phone:📞 +2349031345588</p>
+        <p>LinkedIn:💼 Fasanya Favour | Instagram: 💬@fassyfavour | Behance: Favour Seun</p><br>
+        <p style="margin-top: 1rem; text-align: center; font-size: 0.85rem;">&copy; 2025, All rights reserved</p>
+    </footer>
+
+
+    <script>
+
+
+        const logo = document.getElementById("logo-toggle");
+        const body = document.body;
+
+        logo.addEventListener("click", function () {
+            body.classList.toggle("dark-mode");
+        });
+
+
+        const header = document.querySelector("header");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+
+
+        const toggleBtn = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
+
+        toggleBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+
+
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const track = document.querySelector('.testimonial-track');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            const slideWidth = slides[0].offsetWidth;
+            track.style.transform = `translateX(-${slideWidth * index}px)`;
+
+            // update dots
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        showSlide(currentSlide); // initial display
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 4000);
+
+        // Optional: click to switch slide manually
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+
+    </script>
+
+</body>
+
+
+</html>
